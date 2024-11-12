@@ -13,7 +13,9 @@
 
   <!-- <script src="/socket.io/socket.io.js"></script> -->
   <script>
+    // Hubungkan ke Heroku Signaling Server
     const socket = io('https://web-rtc-mauve.vercel.app');
+    // const socket = io('https://my-signaling-server.herokuapp.com'); // Ganti URL sesuai dengan URL Heroku Anda
     const localVideo = document.getElementById('localVideo');
     const remoteVideo = document.getElementById('remoteVideo');
     let peerConnection;
