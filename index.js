@@ -6,8 +6,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use(express.static('public'));
-
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 io.on('connection', (socket) => {
   socket.on('offer', (offer) => {
     socket.broadcast.emit('offer', offer);
